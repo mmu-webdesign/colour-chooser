@@ -1,4 +1,5 @@
 // To do
+// this code seems to be crashing Firefox Dev Edition a lot?
 // rewrite so that all browsers update the colour as it's being chosen (firefox only updates when the colour chooser is closed)
 // rewrite so that the same UI can be used on multiple divs
 
