@@ -166,5 +166,5 @@ copyButton.onclick = function() {
     var text_colour = document.getElementById('text-colour-chooser').value;
     var link_colour = document.getElementById('link-colour-chooser').value;
 
-    alert('Copy and paste these values into your stylesheet.\r\n\r\nBackground colour: ' + bg_colour + '\r\nHeading colour: ' + heading_colour + '\r\nParagraph text: ' + text_colour + '\r\nHyperlink: ' + link_colour);
+    alert('Copy and paste these values into your stylesheet.\r\n\r\n/*\r\nBackground colour: ' + bg_colour + '\r\nHeading colour: ' + heading_colour + '\r\nParagraph text: ' + text_colour + '\r\nHyperlink: ' + link_colour + '\r\n*/');
 }
