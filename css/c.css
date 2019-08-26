@@ -122,6 +122,13 @@ header p {
     padding: 0;
 }
 
+.palette__indicator {
+    font-style: normal;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #eee;
+}
+
 .palette__chooser {
     border: 0;
     padding: 0;

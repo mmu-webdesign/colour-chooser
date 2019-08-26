@@ -3,6 +3,7 @@
 // rewrite so that all browsers update the colour as it's being chosen (firefox only updates when the colour chooser is closed) - DONE, use 'input' instead of 'change'.
 // rewrite in a class-based way so that the same UI can be used on multiple divs
 // can't copy and paste from http Alert boxes
+// Run the code onLoad so that it makes sense with the current values
 
 var bg_colour = document.getElementById('background-colour-chooser');
 var heading_colour = document.getElementById('heading-colour-chooser');
@@ -104,7 +105,7 @@ checkContrast = function() {
     var bg_text = evaluateColorContrast(bg_colour, text_colour);
     var bg_link = evaluateColorContrast(bg_colour, link_colour);
 
-    console.log('background to heading: ' + bg_heading.levelAAANormal + ' ratio: ' + bg_heading.ratio);
+    console.log('background to heading: ' + bg_heading.levelAAALarge + ' ratio: ' + bg_heading.ratio);
     console.log('background to text: ' + bg_text.levelAAANormal + ' ratio: ' + bg_text.ratio);
     console.log('background to link: ' + bg_link.levelAAANormal + ' ratio: ' + bg_link.ratio);
 
@@ -112,13 +113,13 @@ checkContrast = function() {
     var text_readout = document.getElementById('text-ratio');
     var link_readout = document.getElementById('link-ratio');
 
-    heading_readout.innerText = bg_heading.ratio.toPrecision(3);
-    text_readout.innerText = bg_text.ratio.toPrecision(3);
-    link_readout.innerText = bg_link.ratio.toPrecision(3);
+    heading_readout.innerHTML = "<i class=\"palette__indicator\">AAA Large</i> " + bg_heading.ratio.toPrecision(3);
+    text_readout.innerHTML = "<i class=\"palette__indicator\">AAA Normal</i> " + bg_text.ratio.toPrecision(3);
+    link_readout.innerHTML = "<i class=\"palette__indicator\">AAA Normal</i> " + bg_link.ratio.toPrecision(3);
 
     heading_readout.classList.remove("pass");
     heading_readout.classList.remove("fail");
-    heading_readout.classList.add(bg_heading.levelAAANormal);
+    heading_readout.classList.add(bg_heading.levelAAALarge);
 
     text_readout.classList.remove("pass");
     text_readout.classList.remove("fail");
@@ -169,3 +170,5 @@ copyButton.onclick = function() {
 
     alert('Copy and paste these values into your stylesheet.\r\n\r\n/*\r\nBackground colour: ' + bg_colour + '\r\nHeading colour: ' + heading_colour + '\r\nParagraph text: ' + text_colour + '\r\nHyperlink: ' + link_colour + '\r\n*/');
 }
+
+// updateUI(); - this will have to be refactored so you can call a function to update the visible state of the app.
