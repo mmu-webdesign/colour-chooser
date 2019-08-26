@@ -1,7 +1,7 @@
 // To do
 // this code seems to be crashing Firefox Dev Edition a lot?
-// rewrite so that all browsers update the colour as it's being chosen (firefox only updates when the colour chooser is closed)
-// rewrite so that the same UI can be used on multiple divs
+// rewrite so that all browsers update the colour as it's being chosen (firefox only updates when the colour chooser is closed) - DONE, use 'input' instead of 'change'.
+// rewrite in a class-based way so that the same UI can be used on multiple divs
 // can't copy and paste from http Alert boxes
 
 var bg_colour = document.getElementById('background-colour-chooser');
@@ -131,28 +131,28 @@ checkContrast = function() {
 
 }
 
-bg_colour.addEventListener('change', (event) => {
+bg_colour.addEventListener('input', (event) => {
     var chosen_colour = event.target.value;
     var toChange = document.querySelectorAll('.container');
     toChange[0].style.backgroundColor = chosen_colour;
     checkContrast();
 });
 
-heading_colour.addEventListener('change', (event) => {
+heading_colour.addEventListener('input', (event) => {
     var chosen_colour = event.target.value;
     var toChange = document.querySelectorAll('.content h2');
     toChange[0].style.color = chosen_colour;
     checkContrast();
 });
 
-text_colour.addEventListener('change', (event) => {
+text_colour.addEventListener('input', (event) => {
     var chosen_colour = event.target.value;
     var toChange = document.querySelectorAll('.content p');
     toChange[0].style.color = chosen_colour;
     checkContrast();
 });
 
-link_colour.addEventListener('change', (event) => {
+link_colour.addEventListener('input', (event) => {
     var chosen_colour = event.target.value;
     var toChange = document.querySelectorAll('.content a');
     toChange[0].style.color = chosen_colour;
