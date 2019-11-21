@@ -140,6 +140,7 @@ checkContrast = function() {
 }
 
 bg_colour.addEventListener('input', (event) => {
+    console.log('setting');
     var chosen_colour = event.target.value;
     var toChange = document.querySelectorAll('.navigation ul li a:not(.hover)');
     for (i = 0; i < toChange.length; i++) {
@@ -163,24 +164,18 @@ hover_colour.addEventListener('input', (event) => {
 
 
 
-var bg_colour = document.getElementById('nav-colour-chooser').value.substr(1);
-var hover_colour = document.getElementById('nav-hover-colour-chooser').value.substr(1);
+var initial_bg_colour = document.getElementById('nav-colour-chooser').value.substr(1);
+var initial_hover_colour = document.getElementById('nav-hover-colour-chooser').value.substr(1);
 
 
 
 var toChange = document.querySelectorAll('.navigation ul li a.hover');
-toChange[0].style.backgroundColor = '#' + hover_colour;
+toChange[0].style.backgroundColor = '#' + initial_hover_colour;
 
 
 var toChange = document.querySelectorAll('.navigation ul li a:not(.hover)');
 for (i = 0; i < toChange.length; i++) {
-    toChange[i].style.backgroundColor = '#' + bg_colour;
-    toChange[i].onmouseover = function() {
-        this.style.backgroundColor = '#' + hover_colour;
-    }
-    toChange[i].onmouseout = function() {
-        this.style.backgroundColor = '#' + bg_colour;
-    }
+    toChange[i].style.backgroundColor = '#' + initial_bg_colour;
 }
 
 checkContrast();
