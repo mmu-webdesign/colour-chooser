@@ -180,3 +180,75 @@ input[type="color"]::-webkit-color-swatch {
     content: '\2713';
     padding-right: 0.2rem;
 }
+
+.acw1 body {
+    color: #2e3940;
+}
+
+.acw1 header {
+    background: #eee;
+    color: #c30;
+    min-height: 20vh;
+}
+
+.acw1 header h1 {
+    color: #333;
+}
+
+.acw1 footer {
+    border-top: 1px solid #eee;
+    text-align: center;
+    padding: 1rem 0 3rem 0;
+    color: #2e3940;
+    max-width: 800px;
+    margin: 5em auto 0 auto;
+}
+
+.acw1 footer a {
+    color: darkred;
+}
+
+.acw1 .palette {
+    margin: 5em auto;
+    max-width: 800px;
+    display: block;
+}
+
+.navigation {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 3em auto;
+    max-width: 900px;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation li {
+    flex: 1;
+    display: flex;
+}
+
+.navigation li a {
+    flex: 1;
+    padding: 15px 23px;
+    display: block;
+    background: #c30;
+    font-weight: bold;
+    color: white;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    transition: background-color 0.2s ease;
+}
+
+.acw1 .palette__hex {
+    display: block;
+    font-weight: normal;
+    margin-top: 0.2rem;
+}
+
+.acw1 input:hover {
+    cursor: pointer;
+}
